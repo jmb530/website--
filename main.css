@@ -1,0 +1,270 @@
+:root {
+  --color-font: #494949;
+  --color-primary: #023618; /* dark green */
+  --color-secondary: #613a3a; /* rose ebony */
+  --color-dark-accent: #6f8ab7; /* light blue */
+  --color-accent: #eef4ed; /* cream */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  /* this an experimental line-height; if it breaks, add line-height: 1.5 to body */
+  line-height: calc(1em + 0.5rem);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/************ add your CSS here *****************/
+
+/***** General element styles *****/
+body {
+  font-family: "Inter Semi Bold", sans-serif;
+  color: var(--color-font);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-primary);
+  font-family: "Inter Semi Bold", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark-accent);
+  font-weight: 700;
+}
+
+a[href]:hover {
+  color: var(--color-accent-light);
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 50rem;
+}
+
+article,
+aside {
+  margin-bottom: 6rem;
+}
+
+aside {
+  padding: 0 1rem;
+}
+
+footer {
+  background-color: var(--color-dark-accent);
+}
+
+footer p {
+  color: #fff;
+  margin: 0;
+  padding: 3rem 1rem 6rem;
+}
+
+.button {
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: background-color 400ms ease-in-out, color 400ms ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--color-secondary);
+  color: #ccc;
+}
+
+a.button:hover {
+  color: #ccc;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin: 0 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 0;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 400;
+  min-width: 250px;
+}
+
+.card p {
+  position: absolute;
+  inset: 0;
+  padding: 30%;
+  margin: 0;
+  line-height: 1;
+  color: var(--color-dark-accent);
+}
+
+.card img {
+  display: block;
+  object-fit: cover;
+  width: 500px;
+  height: 500px;
+}
+
+/* Text Overlay/Hero Image */
+.hero {
+  position: relative;
+  height: 100vh;
+}
+
+.hero .textWrapper {
+  position: absolute;
+  color: #613a3a;
+  inset: auto 2rem 30vh 2rem;
+  text-align: center;
+  margin-bottom: 10rem;
+}
+
+.hero h1 {
+  color: #613a3a;
+  font-weight: 500;
+  text-shadow: 3px 3px 6px #494949;
+}
+
+article {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+
+/*intersection observer*/
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.card:nth-child(2) {
+  transition-delay: 400ms;
+}
+
+.card:nth-child(3) {
+  transition-delay: 600ms;
+}
+
+.card:nth-child(4) {
+  transition-delay: 800ms;
+}
+
+@media (min-width: 601px) {
+  .panel {
+    flex-direction: row;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 60%;
+  }
+
+  .panel .image-wrapper {
+    flex: 1 1 40%;
+  }
+
+  .panel h2 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 601px) {
+  .hero {
+    height: 80vh;
+  }
+  .hero img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 50%;
+  }
+
+  .panel .image-wrapper {
+    flex: 1 1 50%;
+  }
+}

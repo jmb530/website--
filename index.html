@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <title>Home</title>
+</head>
+
+<body>
+  <div class="hero">
+    <picture>
+      <img src="images/HariNandakumar.jpg" alt="Herd of Elk">
+    </picture>
+    <div class="textWrapper">
+      <h1>Elk Facts</h1>
+    </div>
+  </div>
+  <main>
+    <article class="hidden">
+      <h2>Cervus Canadensis</h2>
+      <p>The elk, or wapiti, is one of the largest species within the deer family, Cervidae, and one of the largest
+        terrestrial mammals in its native range of North America and Central and East Asia.</p>
+      <p>Elk range in forest and forest-edge habitat, feeding on grasses, plants, leaves, and bark. Male elk have large
+        antlers which they shed each year.</p>
+      <a href="#" class="button">Learn More</a>
+    </article>
+  </main>
+  <section class="cards hidden">
+    <a href="#" class="card">
+      <img src="images/AsaRodger.jpg" width="500" height="500" loading="lazy" alt="Elk on road">
+    </a>
+    <a href="#" class="card">
+      <img src="images/ByronJohnson.jpg" width="500" height="500" loading="lazy" alt="Elk bugling">
+    </a>
+    <a href="#" class="card">
+      <img src="images/Mountains.jpg" width="500" height="500" loading="lazy" alt="Mountain range">
+    </a>
+    <a href="#" class="card">
+      <img src="images/steak.jpg" width="500" height="500" loading="lazy" alt="Steak">
+    </a>
+  </section>
+  <section class="hidden">
+    <h2>Characteristics</h2>
+    <p>Elk have thick bodies with slender legs and short tails. They have a shoulder height of 2 ft 6 in – 4 ft 11 in
+      with a nose-to-tail length of 5 ft 3 in – 8 ft 10 in. Males are larger and weigh 392–1,096 lb while females weigh
+      377–644 lb. The largest of the subspecies is the Roosevelt elk (C. c. roosevelti), found west of
+      the Cascade Range in the U.S. states of California, Oregon and Washington, and in the Canadian province of British
+      Columbia. Roosevelt elk have been introduced into Alaska, where the largest males are estimated to weigh up to
+      1,300 lb.</p>
+  </section>
+  <footer>
+    <p>All facts come from the wikipedia page on elk.</p>
+  </footer>
+  <script>const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));</script>
+</body>
+
+</html>
